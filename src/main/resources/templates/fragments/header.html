@@ -20,18 +20,18 @@
 		</ul>
 		<ul class="navbar-nav ms-auto p-2">
 			<li class="nav-item active" sec:authorize="!isAuthenticated()">
-				<a class="nav-link" th:text="'Login'" th:href="@{login}"></a>
+				<a class="nav-link" th:text="'Login'" th:href="@{/login}"></a>
 			</li>
 			
 			<li class="nav-item active" sec:authorize="!isAuthenticated()">
-				<a class="nav-link" th:text="'Sign Up'" th:href="@{register}"></a>
+				<a class="nav-link" th:text="'Sign Up'" th:href="@{/register}"></a>
 			</li>
 			
 			<li class="nav-item active px-2" sec:authorize="isAuthenticated()">
 				<span class="nav-link disabled" sec:authentication="name"></span> 
 			</li>
 			<li class="nav-item active px-2" sec:authorize="isAuthenticated()">
-				<a class="nav-link" href="#" th:href="@{logout}">Logout</a>
+				<a class="nav-link" href="#" th:href="@{/logout}">Logout</a>
 			</li>
 		</ul>
 		
