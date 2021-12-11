@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Enlist</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+
+<body class="text-white bg-dark">
+	<header th:insert="fragments/header.html :: nav"></header>
+
+	<div class="container-fluid mx-auto px-auto">
+		<form method="post" action="#" th:action="@{/enlistCar}">
+			<h5>Enlist Car</h5>
+			<div class="mb-3">
+			<label for="manufacturerID" class="form-label">Manufacturer ID: </label> 
+				<select class="form-select" id="manufacturerID" th:field="*{car.manufacturerID}">
+					<option th:each="c:*{manufacturerList}"
+						th:value="${c.manufacturerID}" th:text="${c.manufacturerID}">
+				</select>
+			</div>
+			
+			<div class="mb-3">
+			<label for="model" class="form-label">Model</label> 
+				<input class="form-control" id="model" type="text" name="model" th:field="*{car.model}" required/>
+			</div>	
+			
+			<div class="mb-3">
+			<label for="year" class="year">Year</label> 
+				<input class="form-control" id="year" type="number" name="year" th:field="*{car.year}" required />
+			</div>	
+			
+			<div class="mb-3">
+			<label  for="color" class="form-label">Color</label> 
+				<input class="form-control" id="color" type="text" name="color" th:field="*{car.color}" required />
+			</div>	
+			
+			<div class="mb-3">
+			<label  for="price" class="form-label">Price</label> 
+				<input class="form-control" id="price" type="number" min="0" step="any" name="price" th:field="*{car.price}" required />
+			</div>	
+			
+			<div class="mb-3">
+				<button type="submit" class="btn btn-info" name="action">Enlist</button>
+			</div>	
+				
+		</form>
+
+	</div>
+	<footer th:insert="fragments/footer.html :: footer"></footer>
+</body>
+
+</html>

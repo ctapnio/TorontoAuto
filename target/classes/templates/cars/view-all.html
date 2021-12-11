@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>All Cars</title>
+	<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+
+<body class="text-white bg-dark">
+	<header th:insert="/fragments/header.html :: nav"></header>
+	<h2 class="text-white">All Cars</h2>
+	
+		<table class="text-white table table-dark table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Manufacturer</th>
+					<th scope="col">Model</th>
+					<th scope="col">Year</th>
+					<th scope="col">Color</th>
+					<th scope="col">Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c:${carList}">
+					<td>
+						<span th:each="m:${manufacturerList}" th:text="${c.manufacturerID ==  m.manufacturerID} ? ${m.manufacturer} ">
+						</span>
+					</td>
+					<td th:text="${c.model}">testModel</td>
+					<td th:text="${c.year}">testYear</td>
+					<td th:text="${c.color}">testColor</td>
+					<td th:text="${c.price}">testPrice</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<div class="container-fluid mx-auto px-auto">
+			<div class="position-relative">
+				<a class="btn btn-info" th:href="@{/user/enlist}" sec:authorize="hasRole('ROLE_USER')">Enlist Car</a>  
+				<a class="btn btn-info" th:href="@{/user/update}" sec:authorize="hasRole('ROLE_USER')">Update Listing</a>
+				<a class="btn btn-danger" th:href="@{/admin/delete}" sec:authorize="hasRole('ROLE_ADMIN')">Sell a Car</a>
+			</div>
+		</div>
+	<footer th:replace="/fragments/footer.html :: footer"></footer>
+	
+</body>
+
+</html>

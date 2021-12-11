@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Update</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body class="text-white bg-dark">
+	<header th:insert="fragments/header.html :: nav"></header>
+	<h5>Car List</h5>
+	<div>
+		<br>
+		<table class="text-white table table-dark table-hover">
+			<thead>
+				<tr>
+					<th scope="col">ManufacturerID</th>
+					<th scope="col">Model</th>
+					<th scope="col">Year</th>
+					<th scope="col">Color</th>
+					<th scope="col">Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c:${carList}">
+				<td th:text="${c.manufacturerID}">testManufacturerID</td>
+				<td th:text="${c.model}">testModel</td>
+				<td th:text="${c.year}">testYear</td>
+				<td th:text="${c.color}">testColor</td>
+				<td th:text="${c.price}">testPrice</td>
+				<td><a th:href="@{/editCar/}+${c.carID}">edit</a>
+			</tr>
+			</tbody>
+			
+		</table>
+		<br>
+	</div>
+	
+	<div class="container-fluid mx-auto px-auto">
+		<form method="post" action="" th:action="@{/updateCar}" th:object="${car}">
+		<h5>Update Car</h5>
+			<input type="hidden" name="carID" th:field="*{carID}"/>
+			
+			<div class="mb-3">
+				<label for="model" class="form-label">Model</label>
+				<input class="form-control" id="model" type="text" name="model" th:field="*{model}" required>
+			</div>
+			<div class="mb-3">
+				<label for="price" class="form-label">Price</label>
+				<input class="form-control" id="price" type="number" name="price" th:field="*{price}" required>
+			</div>
+			
+			<button class="btn btn-info" type="submit" name="action">Update</button>
+		</form>
+	</div>
+	<footer th:insert="fragments/footer.html :: footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Footer</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+
+<body class="text-white bg-dark">
+	
+		<div th:fragment="footer" class="fixed-bottom">
+			<div class="position-absolute bottom-0 start-50 translate-middle-x">
+				<a href="https://www.linkedin.com/in/ctapnio/" target="_blank"><img class="socials px-2" src="/assets/img/linkedin.svg" alt="not found" height="30px"></a>
+				<a href="https://github.com/ctapnio" target="_blank"><img class="socials px-2" src="/assets/img/github.svg" alt="not found" height="30px"></a>
+			</div>
+		</div>
+	<script src="./js/bootstrap.js"></script>
+<script src="./js/jquery-3.6.0.js"></script>
+</body>
+</html>

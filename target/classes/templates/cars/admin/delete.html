@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Delete</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+
+<body class="text-white bg-dark">
+	<header th:insert="fragments/header.html :: nav"></header>
+	
+	<div class="container-fluid mx-auto px-auto">
+		<form method="post" action="" th:action="@{/deleteCar}">
+		<h5>Delete Car</h5>
+		<div class="mb-3">
+			<label for="model" class="form-label">CarID: </label>
+			<select class="form-select" id="carID" th:field="*{car.carID}">
+				<option th:each="c:*{carList}" th:value="${c.carID}" th:text="${c.carID}">
+			</select> 
+		</div>
+		<div class="mb-3">
+			<button class="btn btn-danger" type="submit" name="action">Delete</button>
+		</div>
+				
+				
+		</form>
+	</div>		
+	
+	<footer th:insert="fragments/footer.html :: footer"></footer>
+</body>
+
+</html>

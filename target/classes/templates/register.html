@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body class="text-white bg-dark">
+		<div class="d-flex justify-content-center vh-100 mt-5">
+			<form class="text-white" name="form" action="#" th:action="@{/register}" method="post" onsubmit="return verify()">
+				<h1>Sign Up</h1>
+				<span class="text-danger"  id="error"></span>
+				<div class="mb-3">
+					<label for="username" class="form-label">Email: </label>
+					<input class="form-control" id="username" type="email" name="username" required/>
+				</div>
+				
+				<div class="mb-3">
+					<label for="password" class="form-label">Password: </label>
+					<input class="form-control" id="password" type="password" name="password" required/>
+				</div>
+				
+				<div class="mb-3">
+					<label for="verifyPassword" class="form-label">Verify Password: </label>
+					<input class="form-control" id="verifyPassword" type="password" name="verifyPassword" required/>
+				</div>
+				
+				<div class="mb-3">
+					<button type="submit" class="btn btn-primary">Sign Up</button>
+				</div>
+				<div class="mb-3 mt-2">
+					<a href="/" th:href="@{/}">Back to home page</a>
+				</div>
+			</form>
+	
+	</div>
+    <script>
+    function verify() {
+    	var password1 = document.forms['form']['password'].value;
+    	var password2 = document.forms['form']['verifyPassword'].value;
+    	if (password1 == null || password1 == "" || password1 != password2) {
+    		document.getElementById("error").innerHTML = "Please check your passwords"; 
+    		return false;
+    	 } 
+    	}
+    </script>
+</body>
+</html>
