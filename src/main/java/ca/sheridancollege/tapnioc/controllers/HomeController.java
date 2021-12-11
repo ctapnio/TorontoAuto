@@ -1,7 +1,7 @@
 package ca.sheridancollege.tapnioc.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
+//import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,11 @@ public class HomeController {
 	private DatabaseAccess da;
 
 	@GetMapping("/")
-	public String goHome() {
+	public String goHome(Model m) {
+		m.addAttribute("car", new Car());
+		m.addAttribute("carList", da.getCars());
+		m.addAttribute("manufacturer", new Manufacturer());
+		m.addAttribute("manufacturerList", da.getManufacturers());
 		return "index";
 	}
 
