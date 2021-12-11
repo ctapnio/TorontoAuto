@@ -16,8 +16,8 @@ import ca.sheridancollege.tapnioc.database.DatabaseAccess;
 
 @Controller
 public class HomeController {
+//	@Lazy
 	@Autowired
-	@Lazy
 	private DatabaseAccess da;
 
 	@GetMapping("/")
