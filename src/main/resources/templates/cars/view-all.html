@@ -11,7 +11,7 @@
 	<header th:insert="/fragments/header.html :: nav"></header>
 	<h2 class="text-white">All Cars</h2>
 	
-		<table class="text-white table table-dark table-hover">
+	<!-- 	<table class="text-white table table-dark table-hover">
 			<thead>
 				<tr>
 					<th scope="col">Manufacturer</th>
@@ -41,7 +41,7 @@
 				<a class="btn btn-info" th:href="@{/user/update}" sec:authorize="hasRole('ROLE_USER')">Update Listing</a>
 				<a class="btn btn-danger" th:href="@{/admin/delete}" sec:authorize="hasRole('ROLE_ADMIN')">Sell a Car</a>
 			</div>
-		</div>
+		</div> -->
 	<footer th:replace="/fragments/footer.html :: footer"></footer>
 	
 </body>
