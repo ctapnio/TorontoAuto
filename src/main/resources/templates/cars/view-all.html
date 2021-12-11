@@ -8,7 +8,7 @@
 </head>
 
 <body class="text-white bg-dark">
-	<!-- <header th:insert="/fragments/header.html :: nav"></header>
+	<header th:insert="fragments/header.html :: nav"></header>
 	<h2 class="text-white">All Cars</h2>
 	
 	 	<table class="text-white table table-dark table-hover">
@@ -42,7 +42,7 @@
 				<a class="btn btn-danger" th:href="@{/admin/delete}" sec:authorize="hasRole('ROLE_ADMIN')">Sell a Car</a>
 			</div>
 		</div> 
-	<footer th:replace="/fragments/footer.html :: footer"></footer>-->
+	<footer th:replace="fragments/footer.html :: footer"></footer>
 	
 </body>
 
