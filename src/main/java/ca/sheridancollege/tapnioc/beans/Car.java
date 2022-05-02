@@ -1,7 +1,6 @@
 /*
  * Christian Tapnio
  * 991359879
- * Assignment 3
  * */
 package ca.sheridancollege.tapnioc.beans;
 
