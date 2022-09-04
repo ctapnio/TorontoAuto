@@ -1,4 +1,4 @@
-# TorontoAuto_SpringBoot_Project
+# 🚙 TorontoAuto
 An auto dealer application that includes secured administrative features.
 
 ## Technologies
@@ -10,7 +10,16 @@ An auto dealer application that includes secured administrative features.
 * [Google Fonts](https://fonts.google.com/)
 * [MySQL](https://dev.mysql.com/doc/)
 * [H2 Database](https://www.h2database.com/html/main.html)
-* [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+* [Materialize CSS](https://materializecss.com/)
 
 ## Screenshots
-![](screencapture-localhost-8080-2020-09-22-23_04_45.png)
+![](screenshot1.png)
+![](screenshot2.png)
+![](screenshot3.png)
+![](screenshot4.png)
+![](screenshot5.png)
+
+## Room for improvement
+* UX/UI designs for all pages need to be changed
+* images for cars can be added
+
